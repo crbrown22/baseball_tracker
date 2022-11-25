@@ -16,7 +16,7 @@
 
     <!-- ChartsJS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
-
+    <script src="path/to/chartjs/dist/chart.umd.js"></script>
     <!--Custom CSS-->
     <link rel="stylesheet" href="./style.css">
 
@@ -174,21 +174,20 @@
                 </a>
             </div>
         </div>
+    </div>
 
-
-        <div class="col-md-20">
-            <div class="card">
-                <div class="card-header text-white bg-dark">
-                    Team Hitting Charts
-                </div>
+    <div class="col-md-40">
+        <div class="card">
+            <div class="card-header text-white bg-dark">
+                Team Hitting Charts
             </div>
         </div>
-    </div>
-    <!-- Graphs -->
-    <div class="container float-left">
-        <div class="row">
+
+
+        <!-- Graphs -->
+        <div class="stats row">
             <div class="col-md-4 bg-white">
-                <canvas id="myChart" width="20" height="20"></canvas>
+                <canvas id="myChart" width="10" height="10"></canvas>
                 <script>
                     const ctx = document.getElementById('myChart').getContext('2d');
                     const myChart = new Chart(ctx, {
@@ -228,7 +227,7 @@
                 </script>
             </div>
             <div class="col-md-4 bg-white">
-                <canvas id="myChart1" width="20" height="20"></canvas>
+                <canvas id="myChart1" width="10" height="10"></canvas>
                 <script>
                     const ctx1 = document.getElementById('myChart1').getContext('2d');
                     const myChart1 = new Chart(ctx1, {
@@ -270,8 +269,98 @@
                 </script>
             </div>
         </div>
-    </div>
 
+        <div class="col-md-4 bg-white">
+            <canvas id="myChart2" width="10" height="10"></canvas>
+            <script>
+                const ctx2 = document.getElementById('myChart2').getContext('2d');
+                const myChart2 = new Chart(ctx2, {
+                    type: 'bar',
+                    data: {
+                        labels: ['LD RF', 'LD Center', 'LD LF', 'Right Center', 'Left Center', 'Fly Balls', 'GB RIght', 'GB Left'],
+                        datasets: [{
+                            axis: 'y',
+                            label: '# Hits / Position',
+                            data: [12, 19, 14, 17, 22, 10, 14, 10],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(8, 39, 245, 0.2)',
+                                'rgba:(254, 221, 0)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(8, 39, 245, 1)',
+                                'rgba:(254, 221, 0)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+        <div class="col-md-4 bg-white">
+            <canvas id="myChart3" width="10" height="10"></canvas>
+            <script>
+                const ctx3 = document.getElementById('myChart3').getContext('2d');
+                const myChart3 = new Chart(ctx2, {
+                    type: 'pie',
+                    data: {
+                        labels: ['LD RF', 'LD Center', 'LD LF', 'Right Center', 'Left Center', 'Fly Balls', 'GB RIght', 'GB Left'],
+                        datasets: [{
+                            axis: 'y',
+                            label: '# Hits / Position',
+                            data: [12, 19, 14, 17, 22, 10, 14, 10],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(8, 39, 245, 0.2)',
+                                'rgba:(254, 221, 0)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(8, 39, 245, 1)',
+                                'rgba:(254, 221, 0)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+    </div>
 </body>
 
 </html>
