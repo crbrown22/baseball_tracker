@@ -116,43 +116,110 @@
     </nav>
     <!--end nav-->
 
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header text-white bg-dark">
-                Player Profile
+    <div class="container-max-width" style="position: relative; height:10vh; width:70vw">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-header text-white bg-dark">
+                        <h4>Player Profile</h4>
+
+                        <img class="img-sm" src="./media/IMG-3533.jpg" alt=""
+                            style="position: center; height:30vh; width:10vw">
+                    </div>
+                </div>
             </div>
             <div class="card-body">
-                <div class="row">
-                    <div class="col-md-8">
-                        <span class="h4">
-                            Player Information
-                        </span><a class="btn btn-dark btn-sm float-right" href=" ">Edit</a>
+                <div class="col-md-40">
+                    <hr>
+                    <table class="table text-black text-center">
+                        <thead>
+                            <tr>
+                                <th scope="row">Name</th>
+                                <th scope="row">Positon(s)</th>
+                                <th scope="row">School/Team</th>
 
-                        <div class="col-sm-4">
-                            <img class="img-thumbnail" src="./media/IMG-3533.jpg" alt="">
-                        </div>
+                                <th scope="row">Age</th>
+                                <th scope="row">Grad Yr</th>
+                                <th scope="row">Email</th>
+                                <th scope="row">Head Coach</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table">
+                            <tr>
+                                <td>Christopher Brown</td>
+                                <td>OF</td>
+                                <td>Shawnee High School</td>
+                                <td>38</td>
+
+                                <td>2002</td>
+                                <td>crbrowwnokc@gmail.com</td>
+                                <td>Kevin Paxson</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr>
+                <table class="table text-black text-center">
+                    <thead>
+                        <tr>
+
+                            <th scope="row">Bats(R/L)</th>
+                            <th scope="row">Throws(R/L)</th>
+                            <th scope="row">60 yd(sec)</th>
+                            <th scope="row">Squat Max</th>
+                            <th scope="row">Deadlift Max</th>
+                            <th scope="row">Clean Max</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table">
+                        <tr>
+                            <td>OF</td>
+                            <td>R</td>
+                            <td>R</td>
+                            <td>6.6</td>
+                            <td>500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="container" style="position: relative">
+
+            <div class="card-body">
+                <div class="col-md-4">
+                    <div class="h6">
                         <hr>
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">Season</th>
-                                    <th scope="col">GP</th>
-                                    <th scope="col">AB</th>
-                                    <th scope="col">Avg.</th>
-                                    <th scope="col">Runs</th>
-                                    <th scope="col">Hits</th>
-                                    <th scope="col">2B</th>
-                                    <th scope="col">3B</th>
-                                    <th scope="col">HR(R/L)</th>
-                                    <th scope="col">RBI</th>
-                                    <th scope="col">BB</th>
-                                    <th scope="col">SO</th>
+                                    <th scope="row">Season</th>
+                                    <th scope="row">GP</th>
+                                    <th scope="row">AB</th>
+                                    <th scope="row">Avg.</th>
+                                    <th scope="row">Runs</th>
+                                    <th scope="row">Hits</th>
+                                    <th scope="row">2B</th>
+                                    <th scope="row">3B</th>
+                                    <th scope="row">HR</th>
+                                    <th scope="row">RBI</th>
+                                    <th scope="row">BB</th>
+                                    <th scope="row">SO</th>
+                                    <th scope="row">SLG</th>
+                                    <th scope="row">OBS</th>
+                                    <th scope="row">SB</th>
+                                    <th scope="row">CS</th>
                                 </tr>
                             </thead>
                             <tbody class="table-group-divider">
                                 <tr>
 
                                     <td>2023</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
@@ -179,6 +246,11 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
                                 </tr>
                                 <tr>
 
@@ -194,14 +266,152 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
+
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="container-max-width" style="position: relative; height:70vh; width:120vw">
+            <div class="row">
+                <div class="col-md-3 bg-white">
+                    <canvas id="myChart"></canvas>
+                    <script>
+                        const ctx = document.getElementById('myChart').getContext('2d');
+                        const myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['Fastball', 'Cutter', 'Curveball', 'Slider', 'Change Up', 'Other'],
+                                datasets: [{
+                                    label: '# Hits per Pitch Type',
+                                    data: [12, 19, 3, 5, 2, 3],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+                <div class="col-md-3 bg-white">
+                    <canvas id="myChart1"></canvas>
+                    <script>
+                        const ctx1 = document.getElementById('myChart1').getContext('2d');
+                        const myChart1 = new Chart(ctx1, {
+                            type: 'bar',
+                            data: {
+                                labels: ['Walks', 'Hits', 'HRs', 'RBI', 'Stolen Bases', 'Total Bases', 'Stranded'],
+                                datasets: [{
+                                    label: '# Situational Hitting',
+                                    data: [12, 19, 17, 15, 12, 13, 22],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)',
+                                        'rgba(82, 15, 29, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)',
+                                        'rgb(82, 15, 29, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+
+
+                <div class="col-md-3 bg-white">
+                    <canvas id="myChart2"></canvas>
+                    <script>
+                        const ctx2 = document.getElementById('myChart2').getContext('2d');
+                        const myChart2 = new Chart(ctx2, {
+                            type: 'line',
+                            data: {
+                                labels: ['LD RF', 'LD Center', 'LD LF', 'Right Center', 'Left Center', 'Fly Balls', 'GB RIght', 'GB Left'],
+                                datasets: [{
+                                    axis: 'y',
+                                    label: '# Hits / Position',
+                                    data: [12, 19, 14, 17, 22, 10, 14, 10],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)',
+                                        'rgba(8, 39, 245, 0.2)',
+                                        'rgba:(254, 221, 0)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)',
+                                        'rgba(8, 39, 245, 1)',
+                                        'rgba:(254, 221, 0)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
